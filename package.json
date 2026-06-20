@@ -13,7 +13,7 @@
     "build:preload": "vite build --config vite.preload.config.ts",
     "build:renderer": "vite build",
     "compile": "npm run build && electron-builder --config electron-builder.yml",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --build --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
