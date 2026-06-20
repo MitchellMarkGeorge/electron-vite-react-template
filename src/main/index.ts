@@ -1,8 +1,15 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { config as loadEnv } from 'dotenv';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+loadEnv({
+  path: app.isPackaged
+    ? path.join(process.resourcesPath, '.env')
+    : path.join(__dirname, '../../.env'),
+});
 
 // --- IPC handlers ---------------------------------------------------------
 // Register handlers here; expose them to the renderer in src/preload/index.ts.

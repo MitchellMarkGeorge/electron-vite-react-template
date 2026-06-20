@@ -11,7 +11,7 @@ export default defineConfig({
       fileName: () => 'index.js',
     },
     rollupOptions: {
-      external: ['electron', /^node:/],
+      external: ['electron', 'dotenv', /^node:/],
     },
     emptyOutDir: true,
     minify: false,
